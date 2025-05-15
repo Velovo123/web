@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CV – Anatolii Semenchuk</title>
+
+  <!-- Стилі з попередньої роботи -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<!-- wrapper потрібен для відступів/максимальної ширини -->
+<body class="wrapper light"> <!-- JS при потребі замінить light ↔ dark -->
+
+  <!-- ===== Header (burger + навігація) ===== -->
+  <header>
+    <div class="topbar">
+      <h1>Anatolii Semenchuk</h1>
+
+      <div class="contact">
+        <p>Lviv, Ukraine</p>
+        <p>
+          Phone: <a href="tel:+380983508941">+380 98 350 8941</a><br />
+          Email: <a href="mailto:anatoliyysemenchuk@gmail.com">anatoliyysemenchuk@gmail.com</a><br />
+          LinkedIn:
+          <a target="_blank" href="https://www.linkedin.com/in/anatolii-semenchuk-066527285/">
+            /in/anatolii-semenchuk-066527285/
+          </a><br />
+          GitHub:
+          <a target="_blank" href="https://github.com/Velovo123">github.com/Velovo123</a>
+        </p>
+      </div>
+
+      <!-- Burger -->
+      <input type="checkbox" id="nav-toggle" />
+      <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </label>
+
+      <!-- Якір-посилання -->
+      <nav class="nav-links">
+        <a href="#objective">Objective</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <h1>.NET Developer</h1>
+    <p>Building cross-platform apps &amp; secure APIs with C# / ASP.NET Core</p>
+  </section>
+
+  <!-- ===== Основний контент ===== -->
+  <main>
+
+    <section id="objective" class="objective">
+      <h2>Objective</h2>
+      <p>
+        Motivated and detail-oriented aspiring .NET Developer with a strong foundation in C#, ASP.NET Core, and RESTful APIs.<br />
+        Experienced in developing Dockerized applications and implementing Entity Framework Core for database management.<br />
+        Passionate about leveraging cybersecurity knowledge and programming expertise to contribute to high-impact software development projects.
+      </p>
+    </section>
+
+    <section id="skills" class="skills">
+      <h2>Skills &amp; Abilities</h2>
+      <ul>
+        <li>C#</li><li>Git</li><li>OOP</li><li>Entity Framework Core</li>
+        <li>ASP.NET Core</li><li>RESTful API</li><li>Docker</li><li>SQL</li>
+        <li>English B1 (Intermediate)</li>
+      </ul>
+    </section>
+
+    <!-- ===== Проєкти + місце для коментарів ===== -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Fitness Tracker API</h3>
+          <p><strong>Tech:</strong> C#, ASP.NET Core, EF Core, SQL, Docker</p>
+          <ul>
+            <li>User authentication &amp; RBAC</li>
+            <li>EF Core migrations</li>
+            <li>Containerized for prod-parity</li>
+          </ul>
+          <p style="margin-top:0.75rem;">
+            <a target="_blank" href="https://github.com/Velovo123/fitness-tracker-api">GitHub ↗</a>
+          </p>
+        </article>
+      </div>
+
+      <!-- Динамічні коментарі роботодавців -->
+      <h3 style="margin-top:3rem">Employers’ feedback</h3>
+      <ul id="comments-list"></ul>
+    </section>
+
+    <!-- ===== Освіта ===== -->
+    <section id="education" class="education">
+      <h2>Education &amp; Certificates</h2>
+
+      <p>
+        <strong>B.Sc. in Cybersecurity</strong><br />
+        Lviv Polytechnic National University (Expected: June 2026)
+      </p>
+
+      <p><strong>Courses &amp; Certifications:</strong></p>
+      <ul>
+        <li>Data Structures and Algorithms (C#), Udemy — <a target="_blank" href="https://www.udemy.com/certificate/UC-161269eb-f86f-4540-9637-2fde66bfe428/">verify</a></li>
+        <li>Entity Framework Core — <a target="_blank" href="https://www.udemy.com/certificate/UC-d67e5dd8-f637-4fcf-9f45-e47ffcf56966/">verify</a></li>
+        <li>C#/.NET Fundamentals, SoftServe — Series HJ 16399/2023</li>
+        <li>HTML5/CSS3/JS Fundamentals, SoftServe — Series WF 16986/2024</li>
+        <li>DevOps for Developers, SoftServe — Series ND 17691/2024</li>
+        <li>Database Fundamentals, SoftServe — Series QX 18355/2024</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer (сюди JS вставить sysInfo) ===== -->
+  <footer>
+    <p id="sys-info"></p>
+    <p style="margin-top:1rem;">CV PDF available on request.</p>
+  </footer>
+
+  <!-- ===== Модальне вікно (спочатку приховане) ===== -->
+  <div id="feedback-modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="modal-close" aria-label="Close">&times;</button>
+      <h2>Let’s stay in touch</h2>
+
+      <!-- !!! Замініть YOUR_ENDPOINT після реєстрації на Formspree -->
+      <form action="https://formspree.io/f/mjkwjqwe" method="POST" class="modal-form">
+        <label> Name
+          <input type="text" name="name" required />
+        </label>
+
+        <label> Email
+          <input type="email" name="email" required />
+        </label>
+
+        <label> Phone
+          <input type="tel" name="phone" />
+        </label>
+
+        <label> Message
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+
+        <button type="submit" class="btn-primary">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== Перемикач теми ===== -->
+  <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌓</button>
+
+  <!-- Скрипт з логікою ЛР-4 -->
+  <script src="script.js" defer></script>
+</body>
+</html>
